@@ -17,7 +17,6 @@ var ErrAlreadyApplied = errors.New("entry already applied")
 
 // State is a general-purpose data store designed to accumulate
 // and apply replicated updates from a raft log.
-// The zero value is an empty State ready to use.
 type State struct {
 	state        map[string][]byte
 	peers        map[uint64]string // id -> addr
