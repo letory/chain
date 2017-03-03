@@ -32,5 +32,10 @@ func writeFile(name string, data []byte, perm os.FileMode) error {
 	if err != nil {
 		return errors.Wrap(err)
 	}
-	return errors.Wrap(os.Rename(temp, name))
+
+	err = os.Rename(temp, name)
+	if err != nil {
+		return errors.Wrap(err)
+	}
+	return nil
 }
