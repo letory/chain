@@ -151,7 +151,6 @@ func (s *State) Get(key string) (value []byte) {
 // The encoded op should be committed to the raft log,
 // then it can be applied with Apply.
 func Set(key string, value []byte) (instruction []byte) {
-	// TODO(kr): make a way to delete things
 	b, _ := proto.Marshal(&statepb.Instruction{
 		Operations: []*statepb.Op{{
 			Type:  statepb.Op_SET,
