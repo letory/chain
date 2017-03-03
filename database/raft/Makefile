@@ -1,3 +1,5 @@
+# The following commands may be useful for developing and debugging
+# our Raft packages. 
 
 build:
 	go install chain/cmd/cored
