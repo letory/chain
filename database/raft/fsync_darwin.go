@@ -1,5 +1,11 @@
 // +build darwin
 
+// On Darwin, fsync() does not guarantee data integrity if the system loses power
+// or crashes. The recommended solution is to use the F_FULLSYNC fcntl.
+//
+// For more, see the Apple man page for fsync:
+// https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man2/fsync.2.html
+
 package raft
 
 import (
